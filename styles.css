@@ -1,0 +1,106 @@
+/*
+primary color: #087f5b
+secondary (accent) color:
+grey color: #343a40
+
+*/
+
+:root {
+  --primary-color: #087f5b;
+  --grey-color: #343a40;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  line-height: 1;
+}
+
+.accordion {
+  width: 700px;
+  margin: 0 auto;
+}
+
+.chevron-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  stroke: var(--primary-color);
+  justify-self: center;
+}
+
+.item {
+  box-shadow: 0 0 2rem rgba(0, 0, 0, 0.2);
+  padding: 2rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  row-gap: 2rem;
+  column-gap: 1rem;
+  align-items: end;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+.number,
+.question {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.number {
+  color: var(--grey-color);
+}
+
+.open number,
+.open .question {
+  color: var(--primary-color);
+}
+
+.open .hidden-box {
+  display: block;
+}
+
+.open .chevron-icon {
+  transform: rotate(180deg);
+}
+
+.hidden-box {
+  grid-column: 2 / 3;
+}
+.hidden-box-text {
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.accordion-list {
+  color: var(--grey-color);
+  margin-left: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.hidden-box-text {
+  padding-right: 1rem;
+}
+
+/* Styling list traditionally*/
+/* .hidden-box li {
+  margin-bottom: 1rem;
+}
+.hidden-box li:last-child {
+  margin-bottom: 0;
+} */
+
+/*Utility classes*/
+.hide-content {
+  display: none;
+}
